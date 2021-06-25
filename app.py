@@ -1,4 +1,5 @@
 import os
+import datetime
 from flask import Flask, render_template, request, flash, redirect, url_for
 from werkzeug.utils import secure_filename
 from db import db
@@ -52,7 +53,8 @@ def uploadFile():
     #     genres=request.form['genresInput'],
     #     # get run time: run_time = 
     #     poster=request.files.to_dict.keys()[1],
-    #     link=request.files.to_dict.keys()[0]
+    #     link=request.files.to_dict.keys()[0],
+    #     date_added=datetime.date.now()
     # )
     # db.session.add(newMovie)
     # db.session.commit()

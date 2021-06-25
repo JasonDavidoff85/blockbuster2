@@ -9,3 +9,4 @@ class Movie(db.Model):
     poster = db.Column(db.Text, nullable=False)
     tags = db.Column(db.Text)
     link = db.Column(db.Text, nullable=False)
+    date_added = db.Column(db.Date, nullable=False)
