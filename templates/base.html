@@ -10,16 +10,16 @@
 <body class="windows-scrollbar">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-95 ">
-        <a class="navbar-brand" href="#">Blockbuster2</a>
+        <a class="navbar-brand" href="/">Blockbuster2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Movies<span class="sr-only">(current)</span></a>
+                <li class="nav-item {% if request.path == url_for('main') %}active{% endif %}">
+                    <a class="nav-link" href="/">Movies</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if request.path == url_for('upload') %}active{% endif %}">
                     <a class="nav-link" href="{{ url_for('upload') }}">Upload</a>
                 </li>
             </ul>
