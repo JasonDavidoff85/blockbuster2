@@ -1,6 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    <p>{{ message }}</p>
+<div class="container ml-5 mt-4">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Upload movie</h4>
+                </div>
+                <div class="card-body pt-2 pb-0">
+                    <form action="/uploadfile" method="POST" id="uploadMovie" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label for="titleInput" class="col-sm-4 col-form-label">Title:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-95" id="titleInput" name="titleInput">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="directorInput" class="col-sm-4 col-form-label">Director:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-95" id="directorInput" name="directorInput">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="genresInput" class="col-sm-4 col-form-label">Genre(s):</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-95" id="genresInput" name="genresInput">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="movieFileInput" class="col-sm-4 col-form-label">Movie File:</label>
+                            <div class="col-sm-8">
+                                <input type="file" id="movieFileInput" name="moveiFile">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="posterInput" class="col-sm-4 col-form-label">Poster:</label>
+                            <div class="col-sm-8">
+                                <input type="file" id="posterInput" name="posterFile">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <button type="submit" form="uploadMovie" class="btn btn-primary btn-block">Upload</button>
+                            </div>
+                        </div>
+                    </form>
+            
+                </div>
+                
+            </div>
+            
+            {% if sucess %}
+                <p> Sucessfully uploaded! </p>
+            {% endif %}
+        </div>
+        <div class="col-lg-3">
+            
+        </div>
+        <div class="col-lg-4">
+            
+        </div>
+    </div>
+    
 </div>
 {% endblock %}

@@ -1,6 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    <p>{{ message }}</p>
+<div class="container">
+    <div class="d-flex">
+        {% for movie in movies %}
+        <div class="card">
+            <div class="card-header">
+                <a href="{{ movie.link }}"><h4 class="my-0 font-weight-normal">{{ move.title }}</h4></a>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="{{ movie.link }}"><img src="{{ movie.poster }}"></a>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Director: {{ movie.director }}</p>
+                            <p>Run time: {{ movie.run_time }}</p>
+                            <p>Genres: {{ movie.genres }}</p>
+                            <p>Tags: {{ movie.tags }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
 </div>
 {% endblock %}
