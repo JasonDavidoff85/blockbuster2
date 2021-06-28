@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <div class="d-flex">
+    <div class="row mt-4">
         {% for movie in movies %}
+        <div class="col-lg-4">
         <div class="card">
             <div class="card-header">
-                <a href="{{ movie.link }}"><h4 class="my-0 font-weight-normal">{{ move.title }}</h4></a>
+                <h4 class="my-0 font-weight-normal"><a href="{{ movie.link }}">{{ movie.title }}</a></h4>
             </div>
-            <div class="card-body">
+            <div class="card-body px-0">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <a href="{{ movie.link }}"><img src="{{ movie.poster }}"></a>
+                        <div class="col">
+                            <a href="{{ movie.link }}"><img src="{{ movie.poster }}" class="img-fluid"></a>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col">
                             <p>Director: {{ movie.director }}</p>
                             <p>Run time: {{ movie.run_time }}</p>
                             <p>Genres: {{ movie.genres }}</p>
@@ -22,6 +23,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         {% endfor %}
     </div>
