@@ -1,0 +1,14 @@
+a:hover {
+    color: #FFCC00;
+}
+
+a {
+    text-decoration: none !important;
+    color: #FFCC00;
+}
+
+img {
+    height: 300px;
+    width: 200px;
+    object-fit: contain;
+}
