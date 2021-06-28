@@ -9,6 +9,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'mp4'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///movies.db'
 db.init_app(app)
 
 from model import Movie
