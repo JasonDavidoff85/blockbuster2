@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 from werkzeug.utils import secure_filename
 from db import db
 
-UPLOAD_FOLDER = '/path/to/the/uploads'
+UPLOAD_FOLDER = '/static/media'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'mp4'}
 
 app = Flask(__name__)
@@ -16,7 +16,6 @@ from model import Movie
 
 with app.app_context():
     db.create_all()
-
 
 @app.route("/")
 def main():
