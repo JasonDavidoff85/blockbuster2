@@ -3,23 +3,19 @@
 <div class="container">
     <div class="row mt-4">
         {% for movie in movies %}
-        <div class="col-lg-4">
+        <div class="col-lg-5">
         <div class="card">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal"><a href="{{ movie.link }}">{{ movie.title }}</a></h4>
             </div>
             <div class="card-body px-0">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <a href="{{ movie.link }}"><img src="{{ movie.poster }}" class="img-fluid"></a>
-                        </div>
-                        <div class="col">
-                            <p>Director: {{ movie.director }}</p>
-                            <p>Run time: {{ movie.run_time }}</p>
-                            <p>Genres: {{ movie.genres }}</p>
-                            <p>Tags: {{ movie.tags }}</p>
-                        </div>
+                <div class="media">
+                    <a href="{{ movie.link }}"><img src="{{ movie.poster }}" class="mx-3"></a>
+                    <div class="media-body">
+                        <p><b>Director:</b> {{ movie.director }}</p>
+                        <p><b>Run time:</b> {{ movie.run_time }} minutes</p>
+                        <p><b>Genres:</b> {{ movie.genres }}</p>
+                        <p><b>Tags:</b> {{ movie.tags }}</p>
                     </div>
                 </div>
             </div>
@@ -27,7 +23,5 @@
         </div>
         {% endfor %}
     </div>
-    
-    
 </div>
 {% endblock %}
